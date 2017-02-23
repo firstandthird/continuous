@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ -z "$DOMAIN" ]]; then
+  DOMAIN="*"
+fi
+
+HOST="${GITHUB_REPO}-${GITHUB_BRANCH}.${DOMAIN}"
+
+echo ${HOST//[\/]/-}

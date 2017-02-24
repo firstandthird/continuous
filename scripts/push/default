@@ -1,17 +1,17 @@
 #!/bin/bash
 
-env
 #build repo
-BUILDER="firstandthird/builder:0.0.6"
+BUILDER="firstandthird/builder:0.0.7"
 docker pull $BUILDER > /dev/null 2>&1
 IMAGE=$(docker run \
   --rm \
   -e USER=$GITHUB_USER \
   -e REPO=$GITHUB_REPO \
   -e BRANCH=$GITHUB_BRANCH \
+  -e TOKEN=$GITHUB_TOKEN \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /repos:/repos \
-  $BUILDER)
+  ${BUILDER})
 
 if [[ "$?" != 0 ]]; then
   echo "there was an error building"

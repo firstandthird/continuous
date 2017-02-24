@@ -5,6 +5,7 @@ app:
     GITHUB_TOKEN:
     SLACK_HOOK:
     SLACK_CHANNEL:
+    FORCE_COLOR: 1
     VIRTUAL_HOST: "continuous.*"
     DOMAIN:
     VERBOSE: "1"

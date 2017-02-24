@@ -4,7 +4,7 @@ RUN apk add --update docker git bash curl
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.1.1/dumb-init_1.1.1_amd64 /usr/local/bin/dumb-init
 RUN chmod +x /usr/local/bin/dumb-init
 
-RUN npm i -g --silent --progress=false hubhooks@0.0.7
+RUN npm i -g --silent --progress=false hubhooks@0.0.8
 
 ENV PORT=8080
 ENV SECRET=""

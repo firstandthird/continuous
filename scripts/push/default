@@ -15,7 +15,7 @@ IMAGE=$(docker run \
 
 if [[ "$?" != 0 ]]; then
   echo "there was an error building"
-  #post2slack --tags error --message "$NAME failed to deploy"
+  post2slack --tags error --message "$IMAGE failed to build"
   exit 1
 fi
 echo "$IMAGE built"
@@ -39,8 +39,8 @@ docker run -d \
 
 if [[ "$?" != 0 ]]; then
   echo "error running $NAME"
-  #post2slack --tags error --message "error starting $NAME"
+  post2slack --tags error --message "error starting $NAME"
 fi
 
 echo "$NAME deployed to $HOST"
-#post2slack --tags success --message "$NAME deployed: $HOST"
+post2slack --tags success --message "$NAME deployed: $HOST"

@@ -34,6 +34,7 @@ HOST=$(bash /scripts/lib/get-virtual-host)
 docker run -d \
   --name $NAME \
   --env VIRTUAL_HOST=$HOST \
+  --env NODE_ENV=$APP_NODE_ENV \
   $IMAGE
 
 if [[ "$?" != 0 ]]; then

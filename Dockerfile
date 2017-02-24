@@ -14,6 +14,7 @@ ENV SLACK_USERNAME="Continuous"
 ENV SLACK_ICON_EMOJI=":floppy_disk:"
 ENV SLACK_CHANNEL=""
 ENV DOMAIN=""
+ENV APP_NODE_ENV="production"
 
 VOLUME /repos
 

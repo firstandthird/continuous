@@ -8,9 +8,10 @@ IMAGE=$(docker run \
   -e USER=$GITHUB_USER \
   -e REPO=$GITHUB_REPO \
   -e BRANCH=$GITHUB_BRANCH \
+  -e TOKEN=$GITHUB_TOKEN \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /repos:/repos \
-  $IMAGE)
+  $BUILDER)
 
 if [[ "$?" != 0 ]]; then
   echo "there was an error building"
